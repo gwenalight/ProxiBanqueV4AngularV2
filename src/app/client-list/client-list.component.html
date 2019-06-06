@@ -1,0 +1,53 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Gestion clientele</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-warning" routerLinkActive="active" routerLink="/create-client">Creer un Client</a>
+    </nav>
+    <a class="btn btn-info" routerLinkActive="active" routerLink="/clients-list">Liste de Clients </a>
+</div>
+
+
+
+<div class="container custom-container-2">
+
+
+    <div class="no-data text-center" *ngIf="client.length == 0">
+        <p>Il n'y a pas encore de clients!</p>
+        <button class="btn btn-outline-primary" routerLink="/create-client">Ajouter client</button>
+    </div>
+
+    <div *ngIf="client.length !== 0">
+        <h3 class="mb-3 text-center">Liste des clients</h3>
+
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Courriel</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of client">
+                        <td>{{c.id}}</td>
+                        <td>{{c.lastname}}</td>
+                        <td>{{c.firstname}}</td>
+                        <td>{{c.phonenum}}</td>
+                        <td> {{c.email}}</td>
+                        <td>
+                            <button class="btn btn-info mr-1" routerLink="/client-show/{{c.id}}">Coordonnées</button>
+                            <button class="btn btn-warning mr-1" routerLink="/client-edit/{{c.id}}">Editer</button>
+                            <button class="btn btn-danger" (click)="deleteClient(c.id)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

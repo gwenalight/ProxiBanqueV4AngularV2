@@ -1,0 +1,40 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Mise à jour Client</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" [value]="clientDetails.lastname"
+                    class="form-control" placeholder="nom">
+
+
+
+                <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname"
+                    [value]="clientDetails.firstname" class="form-control" placeholder="prenom">
+
+
+                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
+                    placeholder="courriel">
+
+
+                <input type="text" [(ngModel)]="clientDetails.phonenum" name="phonenum" [value]="clientDetails.phonenum"
+                    class="form-control" placeholder="téléphone">
+
+
+                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" [value]="clientDetails.adress"
+                    class="form-control" placeholder="adresse">
+
+                <input type="text" [(ngModel)]="clientDetails.postalcode" name="postalcode" class="form-control"
+                    placeholder="code postal">
+
+                <input type="text" [(ngModel)]="clientDetails.city" name="city" [value]="clientDetails.city"
+                    class="form-control" placeholder="ville">
+
+
+
+
+                <button class="btn btn-success btn-lg btn-block" (click)="updateClient()">Mettre à jour Client</button>
+            </div>
+        </form>
+    </div>
+</div>

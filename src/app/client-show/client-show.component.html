@@ -1,0 +1,24 @@
+<!-- <meta charset="UTF-8" /> -->
+
+<div class="container custom-container">
+    <div class="col-md-12">
+
+
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{clientDetails.firstname}} {{clientDetails.lastname}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Identifiant</h6>
+                <p class="card-text">{{clientDetails.login}}</p>
+                <h6 class="card-subtitle mb-2 text-muted">Addresse</h6>
+                <p class="card-text">{{clientDetails.city}} {{clientDetails.adress}} {{clientDetails.postalcode}} </p>
+                <h6 class="card-subtitle mb-2 text-muted">Contact</h6>
+                <p class="card-text">{{clientDetails.phonenum}} {{clientDetails.email}} </p>
+                <a href="#" class="btn btn-primary" (click)="gotoList()">Retour à la liste clients</a>
+                <button class="btn btn-warning mr-1" routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

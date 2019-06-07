@@ -4,6 +4,12 @@
             <h3 class="mb-3 text-center">Mise a jour Client</h3>
 
             <div class="form-group">
+
+
+                <input type="hidden" [(ngModel)]="clientDetails.id" name="id" [value]="clientDetails.id"
+                    class="form-control" placeholder="nom" #idclient>
+
+
                 <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" [value]="clientDetails.lastname"
                     class="form-control" placeholder="nom">
 
@@ -13,8 +19,8 @@
                     [value]="clientDetails.firstname" class="form-control" placeholder="prenom">
 
 
-                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control" [value]="clientDetails.email"
-                    placeholder="email">
+                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
+                    [value]="clientDetails.email" placeholder="email">
 
 
                 <input type="text" [(ngModel)]="clientDetails.phoneNum" name="phonenum" [value]="clientDetails.phoneNum"
@@ -24,8 +30,8 @@
                 <input type="text" [(ngModel)]="clientDetails.adress" name="adress" [value]="clientDetails.adress"
                     class="form-control" placeholder="adresse">
 
-                <input type="text" [(ngModel)]="clientDetails.postalCode" name="postalcode" class="form-control" [value]="clientDetails.postalCode"
-                    placeholder="code postal">
+                <input type="text" [(ngModel)]="clientDetails.postalCode" name="postalcode" class="form-control"
+                    [value]="clientDetails.postalCode" placeholder="code postal">
 
                 <input type="text" [(ngModel)]="clientDetails.city" name="city" [value]="clientDetails.city"
                     class="form-control" placeholder="ville">

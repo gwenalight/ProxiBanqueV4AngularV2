@@ -9,8 +9,8 @@ import { Advisor } from '../model/Advisor';
 
 export class AdvisorService {
 
-    endpoint = 'http://localhost:3000';
-    // endpoint = 'http://localhost:8080/myapp';
+    // endpoint = 'http://localhost:3000';
+    endpoint = 'http://localhost:8080/myapp';
 
     constructor(private http: HttpClient) { }
 

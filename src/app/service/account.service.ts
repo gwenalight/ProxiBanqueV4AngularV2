@@ -9,8 +9,8 @@ import { Account } from '../model/Account';
 
 export class AccountService {
 
-    endpoint = 'http://localhost:3000';
-    // endpoint = 'http://localhost:8080/myapp';
+    // endpoint = 'http://localhost:3000';
+    endpoint = 'http://localhost:8080/myapp';
 
     constructor(private http: HttpClient) { }
 

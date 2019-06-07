@@ -10,8 +10,8 @@ import { Client } from '../model/client';
 
 export class ClientService {
 
-    endpoint = 'http://localhost:3000';
-    //endpoint = 'http://localhost:8080/myapp';
+    // endpoint = 'http://localhost:3000';
+    endpoint = 'http://localhost:8080/myapp';
 
     constructor(private http: HttpClient) { }
 
@@ -24,35 +24,35 @@ export class ClientService {
 
 
     getClients(): Observable<Client[]> {
-        return this.http.get<Client[]>(this.endpoint + '/client', this.httpOptions)
+        return this.http.get<Client[]>(this.endpoint + '/clients', this.httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
     }
 
     getClient(id): Observable<Client> {
-        return this.http.get<Client>(this.endpoint + '/client/' + id)
+        return this.http.get<Client>(this.endpoint + '/clients/' + id)
             .pipe(
                 catchError(this.handleError)
             )
     }
 
     createClient(client): Observable<Client> {
-        return this.http.post<Client>(this.endpoint + '/client', JSON.stringify(client), this.httpOptions)
+        return this.http.post<Client>(this.endpoint + '/clients', JSON.stringify(client), this.httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
     }
 
-    updateClient(id, client): Observable<Client> {
-        return this.http.put<Client>(this.endpoint + '/client/' + id, JSON.stringify(client), this.httpOptions)
+    updateClient(client): Observable<Client> {
+        return this.http.put<Client>(this.endpoint + '/clients/', JSON.stringify(client), this.httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
     }
 
     deleteClient(id) {
-        return this.http.delete<Client>(this.endpoint + '/client/' + id, this.httpOptions)
+        return this.http.delete<Client>(this.endpoint + '/clients/' + id, this.httpOptions)
             .pipe(
                 catchError(this.handleError)
             )

@@ -1,0 +1,115 @@
+{
+  "client": [
+    {
+      "lastname": "Helfgot",
+      "firstname": "David",
+      "phoneNum": "555 555",
+      "email": "david@helfgott.au",
+      "adress": "12 bld du crepuscule",
+      "city": "Los Angeles",
+      "postalCode": "14512",
+      "id": 4,
+      "login": "dh"
+    },
+    {
+      "lastname": "Kant",
+      "firstname": "Emmanuel",
+      "phoneNum": "555 667",
+      "email": "manu@kant.fr",
+      "id": 6,
+      "adress": "7 allée des marguerite",
+      "postalCode": "78101",
+      "city": "Google",
+      "login": "Ke"
+    },
+    {
+      "lastname": "Gibson",
+      "firstname": "Bob",
+      "phoneNum": "148526318",
+      "email": "bob@gmail.com",
+      "adress": "21 rue Des Champs",
+      "city": "Paris",
+      "postalCode": 75000,
+      "id": 8,
+      "login": "gb"
+    },
+    {
+      "lastname": "Legrand",
+      "firstname": "Michel",
+      "phoneNum": "06 78 74 45 44",
+      "email": "michel@legrand.fr",
+      "adress": "22 avenue du Web",
+      "city": "London",
+      "postalCode": 77000,
+      "id": 9
+    },
+    {
+      "lastname": "Dormant",
+      "firstname": "Frank",
+      "phoneNum": "999 999",
+      "email": "aurore@dormant.te",
+      "adress": "8 grotte des cavernes",
+      "city": "magik",
+      "postalCode": 741,
+      "id": 10
+    },
+    {
+      "lastname": "Dupont",
+      "firstname": "Robert",
+      "phoneNum": "678744544",
+      "email": "o@o.com",
+      "adress": "22 avenue du Web",
+      "city": "London",
+      "postalCode": 77000,
+      "id": 11
+    },
+    {
+      "lastname": "Legrand",
+      "firstname": "Michel",
+      "phoneNum": "678744544",
+      "adress": "22 avenue du Web",
+      "city": "London",
+      "postalCode": 77000,
+      "email": "lm@gamil.com",
+      "id": 13
+    }
+  ],
+  "advisors": [
+    {
+      "lastname": "Boulet",
+      "firstname": "David",
+      "login": "db",
+      "id": 4
+    },
+    {
+      "lastname": "Dormant",
+      "firstname": "Frank",
+      "login": "rd",
+      "id": 5
+    },
+    {
+      "lastname": "Lapuy",
+      "firstname": "Jean",
+      "login": "ljean",
+      "id": 6
+    },
+    {
+      "lastname": "Legrand",
+      "firstname": "Michel",
+      "login": "lm",
+      "id": 7
+    }
+  ],
+  "accounts": [
+    {
+      "sold": 1000,
+      "openingDate": "4111-07-31",
+      "id": 1
+    },
+    {
+      "sold": 200,
+      "openingDate": "2017-03-01",
+      "id": 2
+    }
+  ]
+}

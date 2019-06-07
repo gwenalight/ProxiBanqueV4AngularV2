@@ -10,12 +10,14 @@
                 <h5 class="card-title">{{clientDetails.firstname}} {{clientDetails.lastname}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Identifiant</h6>
                 <p class="card-text">{{clientDetails.login}}</p>
-                <h6 class="card-subtitle mb-2 text-muted">Addresse</h6>
-                <p class="card-text">{{clientDetails.city}} {{clientDetails.adress}} {{clientDetails.postalcode}} </p>
+                <h6 class="card-subtitle mb-2 text-muted">Adresse</h6>
+                <p class="card-text">{{clientDetails.city}} {{clientDetails.adress}} {{clientDetails.postalCode}} </p>
                 <h6 class="card-subtitle mb-2 text-muted">Contact</h6>
-                <p class="card-text">{{clientDetails.phonenum}} {{clientDetails.email}} </p>
-                <a href="#" class="btn btn-primary" (click)="gotoList()">Retour à la liste clients</a>
+                <p class="card-text">{{clientDetails.phoneNum}} {{clientDetails.email}} </p>
                 <button class="btn btn-warning mr-1" routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
+                <p><button class="btn btn-primary mr-1" routerLink="/accounts-list/{{clientDetails.id}}">Liste des comptes</button></p>
+                <a href="#" class="btn btn-primary" (click)="gotoList()">Retour a la liste clients</a>
+
             </div>
         </div>
 

@@ -1,11 +1,16 @@
+import { Account } from './account';
+
 export class Client {
 
     id: number;
     lastname: string;
     firstname: string;
     adress: string;
-    postalcode: string;
+    postalCode: string;
     city: string;
-    phonenum: string;
+    phoneNum: string;
     email: string;
+    account: Account;
 }
+
+

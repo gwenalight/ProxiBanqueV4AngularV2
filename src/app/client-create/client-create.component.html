@@ -12,26 +12,33 @@
                 <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname" class="form-control"
                     placeholder="prenom">
 
-                <input type="text" [(ngModel)]="clientDetails.phonenum" name="phonenum" class="form-control"
-                    placeholder="téléphone">
+                <input type="text" [(ngModel)]="clientDetails.phoneNum" name="phonenum" class="form-control"
+                    placeholder="telephone">
 
 
-                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control" placeholder="courriel">
+                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
+                    placeholder="courriel">
 
-                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" class="form-control" placeholder="adresse">
+                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" class="form-control"
+                    placeholder="adresse">
 
 
-                <input type="text" [(ngModel)]="clientDetails.city" name="city" class="form-control" placeholder="ville">
+                <input type="text" [(ngModel)]="clientDetails.city" name="city" class="form-control"
+                    placeholder="ville">
 
 
-                <input type="number" [(ngModel)]="clientDetails.postalcode" name="postalcode" class="form-control"
+                <input type="number" [(ngModel)]="clientDetails.postalCode" name="postalcode" class="form-control"
                     placeholder="code postal">
 
 
 
 
-                <button type="submit" class="btn btn-success btn-lg btn-block" (click)="createClient()">Creer Client</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block" (click)="createClient()">Creer
+                    Client</button>
+                <button type="button" class="btn btn-info btn-lg btn-block" routerLinkActive="active" routerLink="/clients-list">Retour a
+                    la liste clients</button>
             </div>
+
         </form>
     </div>
 </div>

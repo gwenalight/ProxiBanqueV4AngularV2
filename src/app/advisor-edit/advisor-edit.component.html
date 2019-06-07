@@ -1,0 +1,22 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Editer un conseiller</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="advisorDetails.lastname" name="lastname"
+                    [value]="advisorDetails.lastname" class="form-control" placeholder="nom">
+
+                <input type="text" [(ngModel)]="advisorDetails.firstname" name="firstname"
+                    [value]="advisorDetails.firstname" class="form-control" placeholder="prénom">
+
+                <input type="text" [(ngModel)]="advisorDetails.login" name="login" [value]="advisorDetails.login"
+                    class="form-control" placeholder="identifiant">
+
+                <button class="btn btn-success btn-lg btn-block" (click)="updateAdvisor()">Update advisor</button>
+                <button class="btn btn-warning btn-lg btn-block" routerLink="/advisors-list">Retour a la liste des
+                    conseillers</button>
+            </div>
+        </form>
+    </div>
+</div>

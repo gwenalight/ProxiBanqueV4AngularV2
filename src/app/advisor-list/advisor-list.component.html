@@ -1,0 +1,49 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Gestion des conseillers</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-warning" routerLinkActive="active" routerLink="/create-advisor">Creer un conseiller</a>
+    </nav>
+</div>
+
+
+<div class="container custom-container-2">
+
+
+    <div class="no-data text-center" *ngIf="advisor.length == 0">
+        <p>Il n'y a pas encore de conseillers entrés!</p>
+        <button class="btn btn-outline-primary" routerLink="/create-advisor">Ajouter un conseiller</button>
+    </div>
+
+    <div *ngIf="advisor.length !== 0">
+        <h3 class="mb-3 text-center">Liste des conseillers </h3>
+
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col"> Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of advisor">
+                        <td>{{a.id}}</td>
+                        <td>{{a.lastname}}</td>
+                        <td>{{a.firstname}}</td>
+                        <td>{{a.login}}</td>
+                        <td>
+                            <button class="btn btn-info mr-1" routerLink="/advisor-show/{{a.id}}">Afficher</button>
+                            <button class="btn btn-warning mr-1" routerLink="/advisor-edit/{{a.id}}">Editer</button>
+                            <button class="btn btn-danger" (click)="deleteAdvisor(a.id)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

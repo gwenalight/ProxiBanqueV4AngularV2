@@ -1,0 +1,18 @@
+
+
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Editer un compte</h3>
+
+            <div class="form-group">
+  
+                <input type="number" [(ngModel)]="accountDetails.sold" name="sold" [value]="accountDetails.sold" class="form-control" placeholder="solde">
+
+                <input type="date" [(ngModel)]="accountDetails.openingDate" name="openingDate" [value]="accountDetails.openingDate" class="form-control" placeholder="date de création">
+
+                <button class="btn btn-success btn-lg btn-block" (click)="updateAccount()">Update account</button>
+            </div>
+        </form>
+    </div>
+</div>

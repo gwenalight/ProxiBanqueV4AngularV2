@@ -1,3 +1,23 @@
-<p>
-  advisor-create works!
-</p>
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Create advisor</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="advisorDetails.lastname" name="lastname"  class="form-control" placeholder="nom">
+
+
+
+                <input type="text" [(ngModel)]="advisorDetails.firstname" name="firstname"  class="form-control" placeholder="prénom">
+
+
+
+                <input type="text" [(ngModel)]="advisorDetails.login" name="login"  class="form-control" placeholder="identifiant">
+
+  
+
+                <button class="btn btn-success btn-lg btn-block" (click)="addAdvisor()">Créer un conseiller</button>
+            </div>
+        </form>
+    </div>
+</div>

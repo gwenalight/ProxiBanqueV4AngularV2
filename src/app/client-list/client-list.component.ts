@@ -4,8 +4,7 @@ import { ClientService } from '../service/client.service';
 @Component({
     selector: 'app-client-list',
     templateUrl: './client-list.component.html',
-    styleUrls: ['./client-list.component.css'],
-    providers: [ClientService]
+    styleUrls: ['./client-list.component.css']
 })
 export class ClientListComponent implements OnInit {
 
@@ -33,7 +32,7 @@ export class ClientListComponent implements OnInit {
     }
 
     deleteClient(id: number) {
-        if (window.confirm('Are you sure to delete this client ?')) {
+        if (window.confirm('Etes-vous sûr de vouloir supprimer ce client ?')) {
             this.service.deleteClient(id).subscribe(data => {
                 this.loadClients()
             })

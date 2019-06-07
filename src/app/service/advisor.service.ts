@@ -15,21 +15,20 @@ export class AdvisorService {
     constructor(private http: HttpClient) { }
 
 
-
     getAdvisors(): Observable<Advisor[]> {
-        return this.http.get<Advisor[]>(this.endpoint + '/advisors')
+        return this.http.get<Advisor[]>(this.endpoint + '/advisors');
     }
 
     getAdvisor(id): Observable<Advisor> {
-        return this.http.get<Advisor>(this.endpoint + '/advisors/' + id)
+        return this.http.get<Advisor>(this.endpoint + '/advisors/' + id);
     }
 
     createAdvisor(advisor): Observable<Advisor> {
-        return this.http.post<Advisor>(this.endpoint + '/advisors', JSON.stringify(advisor))
+        return this.http.post<Advisor>(this.endpoint + '/advisors',  advisor);
     }
 
     updateAdvisor(id, advisor): Observable<Advisor> {
-        return this.http.put<Advisor>(this.endpoint + '/advisors/' + id, JSON.stringify(advisor))
+        return this.http.put<Advisor>(this.endpoint + '/advisors/' + id, advisor);
     }
 
     deleteAdvisor(id) {

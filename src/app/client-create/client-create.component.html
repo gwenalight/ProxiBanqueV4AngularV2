@@ -1,41 +1,48 @@
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #createClientForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Creer Client</h3>
 
             <div class="form-group">
-                <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" class="form-control"
-                    placeholder="nom">
+
+                <input type="text" class="form-control" id="lastname" placeholder="nom" required
+                    [(ngModel)]="clientDetails.lastname" name="lastname" #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine" class="alert alert-danger">Nom requis</div>
 
 
 
-                <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname" class="form-control"
-                    placeholder="prenom">
+                <input type="text" class="form-control" id="firstname" placeholder="prenom" required
+                    [(ngModel)]="clientDetails.firstname" name="firstname" #firstname="ngModel">
+                <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">Prenom requis</div>
 
-                <input type="text" [(ngModel)]="clientDetails.phoneNum" name="phonenum" class="form-control"
-                    placeholder="telephone">
+                <input type="text" class="form-control" placeholder="telephone" required
+                    [(ngModel)]="clientDetails.phoneNum" name="phonenum" #phoneNum="ngModel">
+                <div [hidden]="phoneNum.valid || phoneNum.pristine" class="alert alert-danger">Numero de telephone
+                    requis</div>
 
+                <input type="email" class="form-control" placeholder="courriel" required
+                    [(ngModel)]="clientDetails.email" name="email" #email="ngModel">
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email requis</div>
 
-                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
-                    placeholder="courriel">
+                <input type="text" class="form-control" placeholder="adresse" required
+                    [(ngModel)]="clientDetails.adress" name="adress" #adress="ngModel">
+                <div [hidden]="adress.valid || adress.pristine" class="alert alert-danger">Adresse requise</div>
 
-                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" class="form-control"
-                    placeholder="adresse">
+                <input type="text" class="form-control" placeholder="ville" required [(ngModel)]="clientDetails.city"
+                    name="city" #city="ngModel">
+                <div [hidden]="city.valid || city.pristine" class="alert alert-danger">Ville requise</div>
 
+                <input type="number" class="form-control" placeholder="code postal" required
+                    [(ngModel)]="clientDetails.postalCode" name="postalcode" #postalcode="ngModel">
 
-                <input type="text" [(ngModel)]="clientDetails.city" name="city" class="form-control"
-                    placeholder="ville">
+            </div>
 
-
-                <input type="number" [(ngModel)]="clientDetails.postalCode" name="postalcode" class="form-control"
-                    placeholder="code postal">
-
-
-
-
-                <button type="submit" class="btn btn-success btn-lg btn-block" (click)="createClient()">Creer
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block" (click)="createClient()"
+                    [disabled]="!createClientForm.form.valid">Creer
                     Client</button>
-                <button type="button" class="btn btn-info btn-lg btn-block" routerLinkActive="active" routerLink="/clients-list">Retour a
+                <button type="button" class="btn btn-info btn-lg btn-block" routerLinkActive="active"
+                    routerLink="/clients-list">Retour a
                     la liste clients</button>
             </div>
 

@@ -26,9 +26,9 @@ export class AdvisorEditComponent implements OnInit {
 
     updateAdvisor() {
         if (window.confirm('Voulez-vous modifier ces informations ?')) {
-            this.service.updateAdvisor(this.id, this.advisorDetails).subscribe(data => {
-                this.router.navigate(['/advisors-list'])
+            this.service.updateAdvisor(this.advisorDetails).subscribe(data => {
+                this.router.navigate(['/advisors-list']) //this.advisorsDetails.idmanager
             })
         }
     }
-}
+}   

@@ -24,15 +24,18 @@ export class AdvisorService {
     }
 
     createAdvisor(advisor): Observable<Advisor> {
-        return this.http.post<Advisor>(this.endpoint + '/advisors',  advisor);
+        return this.http.post<Advisor>(this.endpoint + '/advisors', advisor);
     }
 
-    updateAdvisor(id, advisor): Observable<Advisor> {
-        return this.http.put<Advisor>(this.endpoint + '/advisors/' + id, advisor);
+    updateAdvisor(advisor): Observable<Advisor> {
+        return this.http.put<Advisor>(this.endpoint + '/advisors', advisor);
     }
 
     deleteAdvisor(id) {
         return this.http.delete<Advisor>(this.endpoint + '/advisors/' + id)
+    }
+    getAdvisorById(id): Observable<Advisor> {
+        return this.http.get<Advisor>(this.endpoint + '/accounts/bymanager/' + id);
     }
 
 

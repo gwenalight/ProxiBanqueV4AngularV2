@@ -1,22 +1,25 @@
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #createAccountForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Creer un compte</h3>
 
             <div class="form-group">
 
-                <input type="number" [(ngModel)]="accountDetails.sold" name="sold" class="form-control"
-                    placeholder="solde">
+
+                <input type="number" class="form-control" placeholder="Solde" required [(ngModel)]="accountDetails.sold"
+                    name="sold" #sold="ngModel">
+                <div [hidden]="sold.valid || sold.pristine">Solde requis</div>
 
 
+                <input type="date" class="form-control" placeholder="Date d'ouverture" required
+                    [(ngModel)]="accountDetails.openingDate" name="openingDate" #openingDate="ngModel">
+                <div [hidden]="openingDate.valid || openingDate.pristine">Date d'ouverture requise</div>
 
-                <input type="date" [(ngModel)]="accountDetails.openingDate" name="openingDate"
-                    class="form-control" placeholder="date d'ouverture">
 
-
-
-                <button class="btn btn-success btn-lg btn-block" (click)="addAccount()">Creer un compte</button>
+                <button class="btn btn-success btn-lg btn-block" [disabled]="!createAccountForm.form.valid"
+                    (click)="addAccount()"> Creer un compte</button>
             </div>
         </form>
     </div>
 </div>
+<!--routerLinkActive="active" routerLink="/accounts-list-->

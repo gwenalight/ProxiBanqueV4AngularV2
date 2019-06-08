@@ -1,5 +1,3 @@
-import { Account } from './account';
-
 export class Client {
 
     id: number;
@@ -10,7 +8,7 @@ export class Client {
     city: string;
     phoneNum: string;
     email: string;
-    account: Account;
+    idavisor: number;
 }
 
 

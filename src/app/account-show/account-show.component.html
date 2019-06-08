@@ -6,7 +6,8 @@
         <div class="card" style="width: 18rem;">
 
             <div class="card-body">
-                <!-- <h5 class="card-title">{{clientDetails.firstname}} {{clientDetails.lastname}}</h5> -->
+
+                <h5 class="card-title">{{clientDetails.firstname}} {{clientDetails.lastname}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Numero de compte</h6>
                 <p class="card-text">{{accountDetails.id}}</p>
                 <h6 class="card-subtitle mb-2 text-muted">Solde</h6>
@@ -14,7 +15,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Date d'ouverture</h6>
                 <p class="card-text">{{accountDetails.openingDate}}</p>
                 <button class="btn btn-warning mr-1" routerLink="/account-edit/{{accountDetails.id}}">Editer</button>
-                <p><button class="btn btn-primary mr-1" routerLink="/accounts-list/{{accountDetails.id}}">Liste des comptes</button></p>
+                <p><button class="btn btn-primary mr-1" routerLink="/accounts-list/{{accountDetails.idclient}}">Liste des comptes</button></p>
 
             </div>
         </div>

@@ -4,5 +4,6 @@ export class Advisor {
     firstname: string;
     login: string;
     password: string;
+    idmanager: number;
 
 }

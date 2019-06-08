@@ -9,9 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AccountListComponent implements OnInit {
 
-    idclient = this.activatedRoute.snapshot.params['id'];
+    identre = this.activatedRoute.snapshot.params['id'];
+
+    idretour = +this.activatedRoute.snapshot.params['idclient'];
 
     account: any = [];
+
+    updateOnNegativeAccount: boolean;
+    updateOnPositiveAccount: boolean;
 
     constructor(
         public service: AccountService, private activatedRoute: ActivatedRoute,
@@ -19,21 +24,21 @@ export class AccountListComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.loadAccounts(this.idclient);
+        this.loadAccounts(this.identre);
     }
 
-
     loadAccounts(idclient) {
-        return this.service.getAccounts().subscribe((data: {}) => {
+        return this.service.getAccountById(idclient).subscribe((data: {}) => {
             console.log(data);
             this.account = data;
-        })
+        });
+
     }
 
     deleteAccount(id: number) {
-        if (window.confirm('Etes-vous sûr de vouloir supprimer ce compte?')) {
+        if (window.confirm('Voulez-vous supprimer ce compte?')) {
             this.service.deleteAccount(id).subscribe(data => {
-                this.loadAccounts(this.idclient)
+                this.loadAccounts(this.identre)
             })
         }
     }

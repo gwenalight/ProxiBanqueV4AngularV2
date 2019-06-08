@@ -1,19 +1,23 @@
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #updateAdvisorForm="ngForm">
             <h3 class="mb-3 text-center">Editer un conseiller</h3>
 
             <div class="form-group">
-                <input type="text" [(ngModel)]="advisorDetails.lastname" name="lastname"
-                    [value]="advisorDetails.lastname" class="form-control" placeholder="nom">
+                <input type="text" class="form-control" placeholder="Nom" [value]="advisorDetails.lastname" required
+                    [(ngModel)]="advisorDetails.lastname" name="lastname" #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine">Nom requis</div>
 
-                <input type="text" [(ngModel)]="advisorDetails.firstname" name="firstname"
-                    [value]="advisorDetails.firstname" class="form-control" placeholder="prénom">
+                <input type="text" class="form-control" placeholder="Prenom" [value]="advisorDetails.firstname" required
+                    [(ngModel)]="advisorDetails.firstname" name="firstname" #firstname="ngModel">
+                    <div [hidden]="firstname.valid || firstname.pristine">Prenom requis</div>
 
-                <input type="text" [(ngModel)]="advisorDetails.login" name="login" [value]="advisorDetails.login"
-                    class="form-control" placeholder="identifiant">
+                <input type="text" class="form-control" placeholder="Identifiant" [value]="advisorDetails.login"
+                required [(ngModel)]="advisorDetails.login" name="login" #login="ngModel">
+                <div [hidden]="login.valid || login.pristine"></div>
 
-                <button class="btn btn-success btn-lg btn-block" (click)="updateAdvisor()">Update advisor</button>
+                <button class="btn btn-success btn-lg btn-block" [disabled]="!updateAdvisorForm.form.valid"
+                    (click)="updateAdvisor()">Update advisor</button>
                 <button class="btn btn-warning btn-lg btn-block" routerLink="/advisors-list">Retour a la liste des
                     conseillers</button>
             </div>

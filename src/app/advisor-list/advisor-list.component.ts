@@ -27,7 +27,7 @@ export class AdvisorListComponent implements OnInit {
     }
 
     deleteAdvisor(id) {
-        if (window.confirm('Etes-vous sûr de vouloir supprimer ce conseiller?')) {
+        if (window.confirm('Voulez-vous supprimer ce conseiller?')) {
             this.service.deleteAdvisor(id).subscribe(data => {
                 this.loadAdvisors()
             })

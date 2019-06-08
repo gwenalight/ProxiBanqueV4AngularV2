@@ -1,22 +1,26 @@
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #createAdvisorForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Create advisor</h3>
 
             <div class="form-group">
-                <input type="text" [(ngModel)]="advisorDetails.lastname" name="lastname"  class="form-control" placeholder="nom">
+                <input type="text" class="form-control" placeholder="Nom" required [(ngModel)]="advisorDetails.lastname"
+                    name="lastname" #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine">Nom requis</div>
+
+                <input type="text" class="form-control" placeholder="Prenom" required
+                    [(ngModel)]="advisorDetails.firstname" name="firstname" #firstname="ngModel">
+                <div [hidden]="firstname.valid || firstname.pristine">Prenom requis</div>
 
 
+                <input type="text" class="form-control" placeholder="Identifiant" required
+                    [(ngModel)]="advisorDetails.login" name="login" #login="ngModel">
+                <div [hidden]="login.valid || login.pristine">Login requis</div>
 
-                <input type="text" [(ngModel)]="advisorDetails.firstname" name="firstname"  class="form-control" placeholder="prénom">
-
-
-
-                <input type="text" [(ngModel)]="advisorDetails.login" name="login"  class="form-control" placeholder="identifiant">
-
-  
-
-                <button class="btn btn-success btn-lg btn-block" (click)="addAdvisor()">Créer un conseiller</button>
+                <button class="btn btn-success btn-lg btn-block" [disabled]="!createAdvisorForm.form.valid"
+                    (click)="addAdvisor()">Creer un conseiller</button>
+                <button class="btn btn-success btn-lg btn-block" routerLinkActive="active"
+                    routerLink="/advisors-list">Retour a la liste des conseillers</button>
             </div>
         </form>
     </div>

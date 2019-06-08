@@ -11,6 +11,7 @@ export class AccountShowComponent implements OnInit {
 
     id = this.activatedRoute.snapshot.params['id'];
     accountDetails: any = {};
+    clientDetails: any = {};
 
     constructor(private service: AccountService,
         private router: Router,

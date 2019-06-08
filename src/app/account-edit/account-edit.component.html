@@ -1,17 +1,21 @@
-
-
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #updateAccountForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Editer un compte</h3>
 
             <div class="form-group">
-  
-                <input type="number" [(ngModel)]="accountDetails.sold" name="sold" [value]="accountDetails.sold" class="form-control" placeholder="solde">
 
-                <input type="date" [(ngModel)]="accountDetails.openingDate" name="openingDate" [value]="accountDetails.openingDate" class="form-control" placeholder="date de création">
+                <input type="number" class="form-control" placeholder="Solde" [value]="accountDetails.sold" required
+                    [(ngModel)]="accountDetails.sold" name="sold" #sold="ngModel">
+                <div [hidden]="sold.valid || sold.pristine">Solde requis</div>
 
-                <button class="btn btn-success btn-lg btn-block" (click)="updateAccount()">Update account</button>
+                <input class="form-control" placeholder="date de création" type="date"
+                    [value]="accountDetails.openingDate" required [(ngModel)]="accountDetails.openingDate"
+                    name="openingDate" #openingDate="ngModel">
+                <div [hidden]="openingDate.valid || openingDate.pristine">Date d'ouverture requise</div>
+
+                <button class="btn btn-success btn-lg btn-block" [disabled]="!updateAccountForm.form.valid"
+                    (click)="updateAccount()">Update account</button>
             </div>
         </form>
     </div>

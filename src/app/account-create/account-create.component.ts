@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Account } from '../model/account';
 import { AccountService } from '../service/account.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AccountListComponent } from '../account-list/account-list.component';
 // import { Client } from '../model/client';
 
 @Component({
@@ -11,27 +12,25 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AccountCreateComponent implements OnInit {
 
-    // @Input()
-    // clientDetails = new Client();
-
     @Input()
     accountDetails = new Account();
-
-    idClient = this.activatedRoute.snapshot.params['id'];
+    alc: AccountListComponent;
+    idclient = this.activatedRoute.snapshot.params['id'];
 
     constructor(
         public service: AccountService,
         private activatedRoute: ActivatedRoute,
         public router: Router
     ) {
-        // this.clientDetails.account = new Account();
+
     }
 
     ngOnInit() { }
 
     addAccount() {
+        this.accountDetails.idclient = this.idclient;
         this.service.createAccount(this.accountDetails).subscribe((data: {}) => {
-            this.router.navigate(['/accounts-list/']);
+            this.router.navigate(['/accounts-list', this.idclient]);
         });
     }
 

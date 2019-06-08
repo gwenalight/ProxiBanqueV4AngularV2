@@ -28,12 +28,16 @@ export class AccountService {
         return this.http.get<Account>(this.endpoint + '/accounts/' + id);
     }
 
+     getAccountById(id): Observable<Account> {
+        return this.http.get<Account>(this.endpoint + '/accounts/byclient/' + id);
+    }
+
     createAccount(account): Observable<Account> {
         return this.http.post<Account>(this.endpoint + '/accounts', account);
     }
 
-    updateAccount(id, account): Observable<Account> {
-        return this.http.put<Account>(this.endpoint + '/accounts/' + id, account);
+    updateAccount(account): Observable<Account> {
+        return this.http.put<Account>(this.endpoint + '/accounts', account);
     }
 
     deleteAccount(id) {

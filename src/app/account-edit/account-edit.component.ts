@@ -13,7 +13,9 @@ export class AccountEditComponent implements OnInit {
     id = this.activatedRoute.snapshot.params['id'];
     accountDetails: any = {};
 
-    constructor(private service: AccountService, private activatedRoute: ActivatedRoute, private router: Router) {
+    constructor(private service: AccountService,
+        private activatedRoute: ActivatedRoute,
+        private router: Router) {
         this.accountDetails = new Account();
 
     }
@@ -24,10 +26,11 @@ export class AccountEditComponent implements OnInit {
         })
     }
 
+
     updateAccount() {
         if (window.confirm('Voulez-vous modifier ces informations ?')) {
-            this.service.updateAccount(this.id, this.accountDetails).subscribe(data => {
-                this.router.navigate(['/accounts-list'])
+            this.service.updateAccount(this.accountDetails).subscribe(data => {
+                this.router.navigate(['/accounts-list', this.accountDetails.idclient]);
             })
         }
     }

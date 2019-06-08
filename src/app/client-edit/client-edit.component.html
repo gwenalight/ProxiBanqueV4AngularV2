@@ -1,6 +1,6 @@
 <div class="container custom-container">
     <div class="col-md-12">
-        <form #mainForm="ngForm">
+        <form #mainForm="ngForm" #createClientForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Mise a jour Client</h3>
 
             <div class="form-group">
@@ -10,33 +10,38 @@
                     class="form-control" placeholder="nom" #idclient>
 
 
-                <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" [value]="clientDetails.lastname"
-                    class="form-control" placeholder="nom">
+                <input type="text" class="form-control" placeholder="Nom" [value]="clientDetails.lastname" required
+                    [(ngModel)]="clientDetails.lastname" name="lastname" #lastname="ngModel">
+                <div [hidden]="lastname.valid || lastname.pristine">Nom requis</div>
 
 
-
-                <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname"
-                    [value]="clientDetails.firstname" class="form-control" placeholder="prenom">
-
-
-                <input type="email" [(ngModel)]="clientDetails.email" name="email" class="form-control"
-                    [value]="clientDetails.email" placeholder="email">
+                <input type="text" class="form-control" placeholder="Prenom" [value]="clientDetails.firstname" required
+                    [(ngModel)]="clientDetails.firstname" name="firstname" #firstname="ngModel">
+                <div [hidden]="firstname.valid || firstname.pristine">Prenom requis</div>
 
 
-                <input type="text" [(ngModel)]="clientDetails.phoneNum" name="phonenum" [value]="clientDetails.phoneNum"
-                    class="form-control" placeholder="téléphone">
+                <input type="email" class="form-control" placeholder="Email" [value]="clientDetails.email" required
+                    [(ngModel)]="clientDetails.email" name="email" #email="ngModel">
+                <div [hidden]="email.valid || email.pristine">Email requis</div>
 
+                <input type="text" class="form-control" placeholder="Telephone" [value]="clientDetails.phoneNum"
+                    required [(ngModel)]="clientDetails.phoneNum" name="phonenum" #phonenum="ngModel">
+                <div [hidden]="phonenum.valid || phonenum.pristine">Numero de telephone requis</div>
 
-                <input type="text" [(ngModel)]="clientDetails.adress" name="adress" [value]="clientDetails.adress"
-                    class="form-control" placeholder="adresse">
+                <input type="text" class="form-control" placeholder="Adresse" [value]="clientDetails.adress" required
+                    [(ngModel)]="clientDetails.adress" name="adress" #adress="ngModel">
+                <div [hidden]="adress.valid || adress.pristine">Adresse requise</div>
 
-                <input type="text" [(ngModel)]="clientDetails.postalCode" name="postalcode" class="form-control"
-                    [value]="clientDetails.postalCode" placeholder="code postal">
+                <input type="text" class="form-control" placeholder="Code postal" [value]="clientDetails.postalCode"
+                    required [(ngModel)]="clientDetails.postalCode" name="postalcode" #postalcode="ngModel">
+                    <div [hidden]="postalcode.valid || postalcode.pristine">Code postal requis</div>
 
-                <input type="text" [(ngModel)]="clientDetails.city" name="city" [value]="clientDetails.city"
-                    class="form-control" placeholder="ville">
+                <input type="text" class="form-control" placeholder="Ville" [value]="clientDetails.city" required
+                    [(ngModel)]="clientDetails.city" name="city" #city="ngModel">
+                    <div [hidden]="city.valid || city.pristine">Ville requise</div>
 
-                <button class="btn btn-success btn-lg btn-block" (click)="updateClient()">Mettre a jour Client</button>
+                <button class="btn btn-success btn-lg btn-block" [disabled]="!createClientForm.form.valid"
+                    (click)="updateClient()">Mettre a jour Client</button>
                 <button class="btn btn-warning btn-lg btn-block" routerLink="/clients-list">Retour a la liste des
                     clients</button>
             </div>

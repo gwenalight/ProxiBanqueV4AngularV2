@@ -32,7 +32,7 @@ export class ClientListComponent implements OnInit {
     }
 
     deleteClient(id: number) {
-        if (window.confirm('Etes-vous sûr de vouloir supprimer ce client ?')) {
+        if (window.confirm('Voulez-vous supprimer ce client ?')) {
             this.service.deleteClient(id).subscribe(data => {
                 this.loadClients()
             })

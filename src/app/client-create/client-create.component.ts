@@ -3,7 +3,6 @@ import { ClientService } from '../service/client.service';
 import { Client } from '../model/client';
 import { Router } from '@angular/router';
 
-
 @Component({
     selector: 'app-client-create',
     templateUrl: './client-create.component.html',
@@ -15,8 +14,7 @@ export class ClientCreateComponent implements OnInit {
     clientDetails = new Client();
 
     constructor(public service: ClientService,
-        public router: Router) {
-
+        public router: Router, ) {
     }
 
     createClient() {

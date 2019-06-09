@@ -1,9 +1,23 @@
+<div class=" backo d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h3 class="my-0 mr-md-auto font-weight-normal">ProxiBanque</h3>
+</div>
+
+<div class=" backg d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Conseiller</h6>
+</div>
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal">Gestion des comptes</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="btn btn-warning" routerLinkActive="active" routerLink="/create-account/{{identre}}">Creer un compte</a>
+        <a class="btn btn-info" routerLinkActive="active" routerLink="/create-account/{{identre}}">Creer un
+            compte</a>
     </nav>
-    <a class="btn btn-info" routerLinkActive="active" routerLink="/clients-list">Liste des clients </a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-warning" routerLinkActive="active" routerLink="/clients-list">Liste des clients </a>
+    </nav>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+    </nav>
 </div>
 
 
@@ -12,7 +26,7 @@
 
     <div class="no-data text-center" *ngIf="account.length == 0">
         <p>Il n'y a pas encore de comptes</p>
-        <button class="btn btn-outline-primary" routerLink="/create-account/{{identre}}">Ajouter un compte</button>
+        <button class="btn btn-outline-info" routerLink="/create-account/{{identre}}">Ajouter un compte</button>
     </div>
 
     <div *ngIf="account.length !== 0">
@@ -37,7 +51,7 @@
                         <td>{{a.openingDate}}</td>
                         <td>
                             <button class="btn btn-info mr-1" routerLink="/account-show/{{a.id}}">Afficher</button>
-                            <button class="btn btn-warning mr-1" routerLink="/account-edit/{{a.id}}">Editer</button>
+                            <button class="btn btn-info mr-1" routerLink="/account-edit/{{a.id}}">Editer</button>
                             <button class="btn btn-danger" (click)="deleteAccount(a.id)">Supprimer</button>
                         </td>
                     </tr>

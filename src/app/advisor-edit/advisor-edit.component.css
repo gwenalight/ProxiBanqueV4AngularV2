@@ -5,3 +5,15 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.backg{
+ background: linear-gradient(to right, #cc0044, rgba(0,255,0,0));
+ color : white;
+}
+
+.backo{
+   background: linear-gradient(to right, #990033, rgba(0,255,0,0)); 
+   color : white;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-style: oblique;
+}

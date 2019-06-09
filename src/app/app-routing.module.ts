@@ -18,6 +18,7 @@ const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'login' },
     { path: 'create-client', component: ClientCreateComponent },
     { path: 'clients-list', component: ClientListComponent },
+    { path: 'clients-list/:id', component: ClientListComponent },
     { path: 'client-edit/:id', component: ClientEditComponent },
     { path: 'client-show/:id', component: ClientShowComponent },
     { path: 'login', component: LoginComponent },

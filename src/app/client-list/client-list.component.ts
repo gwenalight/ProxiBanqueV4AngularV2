@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../service/client.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from '../service/account.service';
 
 @Component({
     selector: 'app-client-list',
@@ -10,7 +12,11 @@ export class ClientListComponent implements OnInit {
 
     client: any = [];
 
-    constructor(private service: ClientService) { }
+    id = this.activatedRoute.snapshot.params['id'];
+
+    constructor(private service: ClientService,
+        private activatedRoute: ActivatedRoute,
+        private router: Router) { }
 
     ngOnInit() {
         this.loadClients();
@@ -23,6 +29,14 @@ export class ClientListComponent implements OnInit {
         });
 
     }
+
+    // loadClients(id: number) {
+    //     return this.service.findAllClientByIdAdvisor(id).subscribe((data: {}) => {
+    //         console.log(data);
+    //         this.client = data;
+    //     });
+
+    // }
 
     getClient(id: number) {
         return this.service.getClient(id).subscribe((data: {}) => {

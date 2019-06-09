@@ -1,0 +1,11 @@
+.backg{
+ background: linear-gradient(to right, #008080, rgba(0,255,0,0));
+ color : white;
+}
+
+.backo {
+  background: linear-gradient(to right, #004d66, rgba(0,255,0,0));
+ color : white;   
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-style: oblique;
+}

@@ -1,3 +1,13 @@
+<div class=" backo d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h3 class="my-0 mr-md-auto font-weight-normal">ProxiBanque</h3>
+</div>
+
+<div class=" backg d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Conseiller</h6>
+</div>
+
+<nav> <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+</nav>
 <div class="container custom-container">
     <div class="col-md-12">
         <form #mainForm="ngForm" #createClientForm="ngForm" novalidate>
@@ -34,11 +44,11 @@
 
                 <input type="text" class="form-control" placeholder="Code postal" [value]="clientDetails.postalCode"
                     required [(ngModel)]="clientDetails.postalCode" name="postalcode" #postalcode="ngModel">
-                    <div [hidden]="postalcode.valid || postalcode.pristine">Code postal requis</div>
+                <div [hidden]="postalcode.valid || postalcode.pristine">Code postal requis</div>
 
                 <input type="text" class="form-control" placeholder="Ville" [value]="clientDetails.city" required
                     [(ngModel)]="clientDetails.city" name="city" #city="ngModel">
-                    <div [hidden]="city.valid || city.pristine">Ville requise</div>
+                <div [hidden]="city.valid || city.pristine">Ville requise</div>
 
                 <button class="btn btn-success btn-lg btn-block" [disabled]="!createClientForm.form.valid"
                     (click)="updateClient()">Mettre a jour Client</button>

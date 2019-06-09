@@ -11,12 +11,9 @@ export class AccountListComponent implements OnInit {
 
     identre = this.activatedRoute.snapshot.params['id'];
 
-    idretour = +this.activatedRoute.snapshot.params['idclient'];
+    //idretour = +this.activatedRoute.snapshot.params['idclient'];
 
     account: any = [];
-
-    updateOnNegativeAccount: boolean;
-    updateOnPositiveAccount: boolean;
 
     constructor(
         public service: AccountService, private activatedRoute: ActivatedRoute,
@@ -27,12 +24,11 @@ export class AccountListComponent implements OnInit {
         this.loadAccounts(this.identre);
     }
 
-    loadAccounts(idclient) {
-        return this.service.getAccountById(idclient).subscribe((data: {}) => {
+    loadAccounts(id) {
+        return this.service.getAccountById(id).subscribe((data: {}) => {
             console.log(data);
             this.account = data;
         });
-
     }
 
     deleteAccount(id: number) {

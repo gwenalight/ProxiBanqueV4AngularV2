@@ -1,4 +1,14 @@
-<!-- <meta charset="UTF-8" /> -->
+<div class=" backo d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h3 class="my-0 mr-md-auto font-weight-normal">ProxiBanque</h3>
+</div>
+
+<div class=" backg d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Conseiller</h6>
+</div>
+
+    <nav class="my-2 my-md-0 mr-md-3">
+        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+    </nav>
 
 <div class="container custom-container">
     <div class="col-md-12">
@@ -14,9 +24,11 @@
                 <p class="card-text">{{clientDetails.city}} {{clientDetails.adress}} {{clientDetails.postalCode}} </p>
                 <h6 class="card-subtitle mb-2 text-muted">Contact</h6>
                 <p class="card-text">{{clientDetails.phoneNum}} {{clientDetails.email}} </p>
-                <button class="btn btn-warning mr-1" routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
-                <p><button class="btn btn-primary mr-1" routerLink="/accounts-list/{{clientDetails.id}}">Liste des comptes</button></p>
-                <a href="#" class="btn btn-primary" (click)="gotoList()">Retour a la liste clients</a>
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block" routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
+                </nav><br/>
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block" routerLink="/accounts-list/{{clientDetails.id}}">Liste des
+                        comptes</button></nav><br/>
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-warning btn-block" (click)="gotoList()">Retour a la liste clients</button></nav>
 
             </div>
         </div>

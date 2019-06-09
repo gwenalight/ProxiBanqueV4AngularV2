@@ -58,6 +58,10 @@ export class ClientService {
             )
     }
 
+    findAllClientByIdAdvisor(id): Observable<Client[]> {
+        return this.http.get<Client[]>(this.endpoint + '/byadvisor/' + id, this.httpOptions)
+    }
+
     handleError(error) {
         let errorMessage = '';
         if (error.error instanceof ErrorEvent) {

@@ -1,0 +1,14 @@
+.back{
+     background-color: #7300e6;
+     color : white;
+}
+
+.backg{
+ background: linear-gradient(to right, #cc0044, rgba(0,255,0,0));
+ color : white;
+}
+
+.backo{
+   background: linear-gradient(to right, #990033, rgba(0,255,0,0)); 
+   color : white;
+}

@@ -7,8 +7,8 @@
 </div>
 
 <nav class="my-2 my-md-0 mr-md-3">
-        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-    </nav>
+    <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+</nav>
 
 <div class="container custom-container">
     <div class="col-md-12">
@@ -20,8 +20,10 @@
                 <h5 class="card-title">{{advisorDetails.firstname}} {{advisorDetails.lastname}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Login</h6>
                 <p class="card-text">{{advisorDetails.login}}</p>
-                <button class="btn btn-info mr-1 btn-block" routerLink="/advisor-edit/{{advisorDetails.id}}">Editer</button>
-                <button class="btn btn-warning mr-1 btn-block" (click)="gotoList()">Retour a la liste des conseillers</button>
+                <button class="btn btn-info mr-1 btn-block"
+                    routerLink="/advisor-edit/{{advisorDetails.id}}">Editer</button>
+                <button class="btn btn-warning mr-1 btn-block" (click)="gotoList()">Retour a la liste des
+                    conseillers</button>
             </div>
         </div>
 

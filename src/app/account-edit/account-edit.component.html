@@ -27,8 +27,9 @@
                 <div [hidden]="openingDate.valid || openingDate.pristine">Date d'ouverture requise</div>
 
                 <button class="btn btn-success btn-lg btn-block" [disabled]="!updateAccountForm.form.valid"
-                    (click)="updateAccount()">Update account</button>
-                <button class="btn btn-warning btn-lg btn-block" routerLink="/accounts-list/{{accountDetails.idclient}}">Retour a la
+                    (click)="updateAccount()">Mettre a jour le compte</button>
+                <button class="btn btn-warning btn-lg btn-block"
+                    routerLink="/accounts-list/{{accountDetails.idclient}}">Retour a la
                     des comptes</button>
             </div>
         </form>

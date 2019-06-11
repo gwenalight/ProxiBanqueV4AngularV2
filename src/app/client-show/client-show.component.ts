@@ -28,7 +28,7 @@ export class ClientShowComponent implements OnInit {
     }
 
     gotoList() {
-        this.router.navigate(['/clients-list']);
+        this.router.navigate(['/clients-list', this.clientDetails.idavisor]);
         return false;
     }
 

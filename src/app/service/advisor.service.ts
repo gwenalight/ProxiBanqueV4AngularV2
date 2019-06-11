@@ -35,8 +35,12 @@ export class AdvisorService {
         return this.http.delete<Advisor>(this.endpoint + '/advisors/' + id)
     }
     getAdvisorByIdManager(id): Observable<Advisor> {
-        return this.http.get<Advisor>(this.endpoint + '/accounts/bymanager/' + id);
+        return this.http.get<Advisor>(this.endpoint + '/advisors/bymanager/' + id);
     }
-
-
+    getAdvisorByLogin(login): Observable<Advisor> {
+        return this.http.get<Advisor>(this.endpoint + '/advisors/login/' + login);
+    }
+    findAllAdvisorByIdManager(id): Observable<Advisor> {
+        return this.http.get<Advisor>(this.endpoint + '/advisors/bymanager/' + id);
+    }
 }

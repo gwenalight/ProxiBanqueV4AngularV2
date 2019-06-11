@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../service/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AccountService } from '../service/account.service';
+import { AdvisorService } from '../service/advisor.service';
 
 @Component({
     selector: 'app-client-list',
@@ -12,31 +12,27 @@ export class ClientListComponent implements OnInit {
 
     client: any = [];
 
-    id = this.activatedRoute.snapshot.params['id'];
+    idadvisor = this.activatedRoute.snapshot.params['id'];
 
-    constructor(private service: ClientService,
+    advisor = this.serviceAdvisor.getAdvisor(this.idadvisor);
+
+
+    constructor(private service: ClientService, private serviceAdvisor: AdvisorService,
         private activatedRoute: ActivatedRoute,
         private router: Router) { }
 
     ngOnInit() {
-        this.loadClients();
+        this.loadClients(this.idadvisor);
+
     }
 
-    loadClients() {
-        return this.service.getClients().subscribe((data: {}) => {
+    loadClients(id: number) {
+        return this.service.findAllClientByIdAdvisor(id).subscribe((data: {}) => {
             console.log(data);
             this.client = data;
         });
 
     }
-
-    // loadClients(id: number) {
-    //     return this.service.findAllClientByIdAdvisor(id).subscribe((data: {}) => {
-    //         console.log(data);
-    //         this.client = data;
-    //     });
-
-    // }
 
     getClient(id: number) {
         return this.service.getClient(id).subscribe((data: {}) => {
@@ -48,7 +44,7 @@ export class ClientListComponent implements OnInit {
     deleteClient(id: number) {
         if (window.confirm('Voulez-vous supprimer ce client ?')) {
             this.service.deleteClient(id).subscribe(data => {
-                this.loadClients()
+                this.loadClients(this.idadvisor)
             })
         }
     }

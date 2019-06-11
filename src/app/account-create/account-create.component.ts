@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Account } from '../model/account';
 import { AccountService } from '../service/account.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AccountListComponent } from '../account-list/account-list.component';
 // import { Client } from '../model/client';
 
 @Component({
@@ -14,7 +13,7 @@ export class AccountCreateComponent implements OnInit {
 
     @Input()
     accountDetails = new Account();
-    alc: AccountListComponent;
+
     idclient = this.activatedRoute.snapshot.params['id'];
 
     constructor(
@@ -29,9 +28,14 @@ export class AccountCreateComponent implements OnInit {
 
     addAccount() {
         this.accountDetails.idclient = this.idclient;
-        this.service.createAccount(this.accountDetails).subscribe((data: {}) => {
+        this.service.createAccount(this.accountDetails).subscribe(() => {
             this.router.navigate(['/accounts-list', this.idclient]);
         });
+    }
+
+    goBack() {
+        this.accountDetails.idclient = this.idclient;
+        this.router.navigate(['/accounts-list', this.idclient]);
     }
 
 }

@@ -28,7 +28,7 @@ export class ClientEditComponent implements OnInit {
     updateClient() {
         if (window.confirm('Voulez-vous modifier ces informations ?')) {
             this.service.updateClient(this.clientDetails).subscribe(data => {
-                this.router.navigate(['/clients-list'])
+                this.router.navigate(['/clients-list', this.clientDetails.idavisor])
             })
         }
     }

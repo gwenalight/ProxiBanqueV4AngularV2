@@ -6,9 +6,9 @@
     <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Conseiller</h6>
 </div>
 
-    <nav class="my-2 my-md-0 mr-md-3">
-        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-    </nav>
+<nav class="my-2 my-md-0 mr-md-3">
+    <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+</nav>
 
 <div class="container custom-container">
     <div class="col-md-12">
@@ -24,11 +24,14 @@
                 <p class="card-text">{{clientDetails.city}} {{clientDetails.adress}} {{clientDetails.postalCode}} </p>
                 <h6 class="card-subtitle mb-2 text-muted">Contact</h6>
                 <p class="card-text">{{clientDetails.phoneNum}} {{clientDetails.email}} </p>
-                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block" routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
-                </nav><br/>
-                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block" routerLink="/accounts-list/{{clientDetails.id}}">Liste des
-                        comptes</button></nav><br/>
-                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-warning btn-block" (click)="gotoList()">Retour a la liste clients</button></nav>
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block"
+                        routerLink="/client-edit/{{clientDetails.id}}">Editer</button>
+                </nav><br />
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-info mr-1 btn-block"
+                        routerLink="/accounts-list/{{clientDetails.id}}">Liste des
+                        comptes</button></nav><br />
+                <nav class="my-2 my-md-0 mr-md-3"><button class="btn btn-warning btn-block" (click)="gotoList()">Retour
+                        a la liste clients</button></nav>
 
             </div>
         </div>

@@ -5,10 +5,10 @@
 <div class=" backg d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Manager</h6>
 </div>
-
 <nav class="my-2 my-md-0 mr-md-3">
-        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-    </nav>
+    <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+</nav>
+
 
 <div class="container custom-container">
     <div class="col-md-12">
@@ -29,8 +29,9 @@
                 <div [hidden]="login.valid || login.pristine"></div>
 
                 <button class="btn btn-success btn-lg btn-block" [disabled]="!updateAdvisorForm.form.valid"
-                    (click)="updateAdvisor()">Update advisor</button>
-                <button class="btn btn-warning btn-lg btn-block" routerLink="/advisors-list">Retour a la liste des
+                    (click)="updateAdvisor()">Mettre a jour</button>
+                <button class="btn btn-warning btn-lg btn-block"
+                    routerLink="/advisors-list/{{advisorDetails.idmanager}}">Retour a la liste des
                     conseillers</button>
             </div>
         </form>

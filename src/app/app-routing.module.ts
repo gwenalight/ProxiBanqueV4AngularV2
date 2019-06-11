@@ -31,7 +31,11 @@ const routes: Routes = [
     { path: 'accounts-list', component: AccountListComponent },
     { path: 'accounts-list/:id', component: AccountListComponent },
     { path: 'account-edit/:id', component: AccountEditComponent },
-    { path: 'account-show/:id', component: AccountShowComponent }
+    { path: 'account-show/:id', component: AccountShowComponent },
+    { path: 'create-client/:id', component: ClientCreateComponent },
+    { path: 'advisors-list/:id', component: AdvisorListComponent },
+    { path: 'create-advisor/:id', component: AdvisorCreateComponent },
+
 
 ];
 

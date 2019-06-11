@@ -3,10 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Manager } from '../model/manager';
 
-//import { catchError } from 'rxjs/operators';
-
-
-
 @Injectable({
     providedIn: 'root'
 })
@@ -38,5 +34,8 @@ export class ManagerService {
     }
     deleteManager(id): Observable<Manager> {
         return this.http.delete<Manager>(this.endpoint + '/managers' + id);
+    }
+    getManagerByLogin(login): Observable<Manager> {
+        return this.http.get<Manager>(this.endpoint + '/managers/login/' + login);
     }
 }

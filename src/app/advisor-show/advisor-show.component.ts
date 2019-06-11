@@ -22,7 +22,7 @@ export class AdvisorShowComponent implements OnInit {
     }
 
     gotoList() {
-        this.router.navigate(['/advisors-list']);
+        this.router.navigate(['/advisors-list', this.advisorDetails.idmanager]);
         return false;
     }
 

@@ -7,9 +7,9 @@
 </div>
 
 <div class="container custom-container">
-     <nav class="my-2 my-md-0 mr-md-3">
-            <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-        </nav>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+    </nav>
     <div class="col-md-12">
         <form #mainForm="ngForm" #createAccountForm="ngForm" novalidate>
             <h3 class="mb-3 text-center">Creer un compte</h3>
@@ -29,6 +29,8 @@
 
                 <button class="btn btn-success btn-lg btn-block" [disabled]="!createAccountForm.form.valid"
                     (click)="addAccount()"> Creer un compte</button>
+                <button class="btn btn-warning btn-lg btn-block" (click)="goBack()">Retour a la liste
+                    des comptes</button>
             </div>
         </form>
     </div>

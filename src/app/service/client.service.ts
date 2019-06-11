@@ -31,7 +31,7 @@ export class ClientService {
     }
 
     getClient(id): Observable<Client> {
-        return this.http.get<Client>(this.endpoint + '/clients/' + id)
+        return this.http.get<Client>(this.endpoint + '/clients/' + id, this.httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
@@ -59,7 +59,7 @@ export class ClientService {
     }
 
     findAllClientByIdAdvisor(id): Observable<Client[]> {
-        return this.http.get<Client[]>(this.endpoint + '/byadvisor/' + id, this.httpOptions)
+        return this.http.get<Client[]>(this.endpoint + '/clients/byadvisor/' + id, this.httpOptions)
     }
 
     handleError(error) {

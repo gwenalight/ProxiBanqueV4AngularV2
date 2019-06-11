@@ -28,7 +28,7 @@ export class AccountService {
         return this.http.get<Account>(this.endpoint + '/accounts/' + id);
     }
 
-     getAccountById(id): Observable<Account> {
+    getAccountById(id): Observable<Account> {
         return this.http.get<Account>(this.endpoint + '/accounts/byclient/' + id);
     }
 

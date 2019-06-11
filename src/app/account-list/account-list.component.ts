@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from '../service/account.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Client } from '../model/client';
+import { ClientService } from '../service/client.service';
 
 @Component({
     selector: 'app-account-list',
@@ -11,17 +13,20 @@ export class AccountListComponent implements OnInit {
 
     identre = this.activatedRoute.snapshot.params['id'];
 
-    //idretour = +this.activatedRoute.snapshot.params['idclient'];
-
     account: any = [];
 
+    clientDetails = this.serviceclient.getClient(this.identre);
+    
+    
+
     constructor(
-        public service: AccountService, private activatedRoute: ActivatedRoute,
+        private service: AccountService, private serviceclient: ClientService, private activatedRoute: ActivatedRoute,
         private router: Router
     ) { }
 
     ngOnInit() {
         this.loadAccounts(this.identre);
+      
     }
 
     loadAccounts(id) {
@@ -37,5 +42,11 @@ export class AccountListComponent implements OnInit {
                 this.loadAccounts(this.identre)
             })
         }
+    }
+
+    goBack() {
+        
+        console.log(this.clientDetails);
+        this.router.navigate(['/client-show', this.identre]);
     }
 }

@@ -7,8 +7,8 @@
 </div>
 
 <nav class="my-2 my-md-0 mr-md-3">
-        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-    </nav>
+    <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+</nav>
 
 <div class="container custom-container">
     <div class="col-md-12">
@@ -25,8 +25,10 @@
                 <p class="card-text">{{accountDetails.sold}}</p>
                 <h6 class="card-subtitle mb-2 text-muted">Date d'ouverture</h6>
                 <p class="card-text">{{accountDetails.openingDate}}</p>
-                <button class="btn btn-info btn-block mr-1" routerLink="/account-edit/{{accountDetails.id}}">Editer</button><br/>
-                <p><button class="btn btn-warning btn-block mr-1" routerLink="/accounts-list/{{accountDetails.idclient}}">Retour a la liste
+                <button class="btn btn-info btn-block mr-1"
+                    routerLink="/account-edit/{{accountDetails.id}}">Editer</button><br />
+                <p><button class="btn btn-warning btn-block mr-1"
+                        routerLink="/accounts-list/{{accountDetails.idclient}}">Retour a la liste
                         des comptes</button></p>
 
             </div>

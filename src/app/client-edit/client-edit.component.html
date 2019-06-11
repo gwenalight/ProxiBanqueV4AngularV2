@@ -5,9 +5,17 @@
 <div class=" backg d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h6 class="my-0 mr-md-auto font-weight-normal">Vous etes actuellement sur une session Conseiller</h6>
 </div>
+<br>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Gestion clientele</h5>
+    
+    <nav class="my-2 my-md-0 mr-md-3">
+        <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
+    </nav>
 
-<nav> <button type="button" class="btn btn-dark" routerLinkActive="active" routerLink="/login">Deconnexion</button>
-</nav>
+</div>
+<br>
+<p></p>
 <div class="container custom-container">
     <div class="col-md-12">
         <form #mainForm="ngForm" #createClientForm="ngForm" novalidate>
@@ -52,7 +60,8 @@
 
                 <button class="btn btn-success btn-lg btn-block" [disabled]="!createClientForm.form.valid"
                     (click)="updateClient()">Mettre a jour Client</button>
-                <button class="btn btn-warning btn-lg btn-block" routerLink="/clients-list">Retour a la liste des
+                <button class="btn btn-warning btn-lg btn-block"
+                    routerLink="/clients-list/{{clientDetails.idavisor}}">Retour a la liste des
                     clients</button>
             </div>
         </form>
